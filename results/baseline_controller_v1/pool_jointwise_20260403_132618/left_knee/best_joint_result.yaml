@@ -1,0 +1,340 @@
+joint: left_knee
+best_train_lsq: 968.6477766435585
+best_scale_vector:
+  armature_scale: 0.34567617230433334
+  viscous_scale: 0.8738353251025475
+  dry_scale: 0.361103201009659
+  torque_limit_scale: 0.9736507723994745
+  action_delay_steps: 1.6745224210588519
+  mass_scale: 1.0008235441705733
+  com_x_scale: 1.0005072988153967
+  com_y_scale: 1.0035573079147189
+  com_z_scale: 1.0021907063238946
+best_eval_vector:
+  armature: 0.1058011451022118
+  viscous_friction: 0.9446064771609699
+  dry_friction: 0.8960616939831335
+  torque_limit: 1353.3745736352696
+  action_delay_steps: 1.6745224210588519
+  kp: 100.0
+  kv: 5.0
+  mass_scale: 1.0008235441705733
+  com_x_scale: 1.0005072988153967
+  com_y_scale: 1.0035573079147189
+  com_z_scale: 1.0021907063238946
+best_eval_array:
+- 0.1058011451022118
+- 0.9446064771609699
+- 0.8960616939831335
+- 1353.3745736352696
+- 1.6745224210588519
+- 100.0
+- 5.0
+- 1.0008235441705733
+- 1.0005072988153967
+- 1.0035573079147189
+- 1.0021907063238946
+selected_absolute_params:
+  armature: 0.1058011451022118
+  viscous_friction: 0.9446064771609699
+  dry_friction: 0.8960616939831335
+  torque_limit: 1353.3745736352696
+  action_delay_steps: 2.0
+  kp: 100.0
+  kv: 5.0
+  mass: 0.9712189630259113
+  com_x: -0.001351991373268873
+  com_y: -0.10056219468330817
+  com_z: -0.00021476299041799847
+datasets:
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/left_knee
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/left_knee
+history:
+- iter: 0.0
+  best: 7524.680069539105
+  mean: 12858.096464400038
+  std: 2961.2845886561013
+  range: 9995.39632400354
+- iter: 1.0
+  best: 5352.809600921695
+  mean: 10548.46067660414
+  std: 3359.0701971017484
+  range: 13949.479091032319
+- iter: 2.0
+  best: 3109.9940507412166
+  mean: 7335.808336345332
+  std: 2800.1123403089377
+  range: 10519.938474923016
+- iter: 3.0
+  best: 1143.108791236107
+  mean: 5070.512957314759
+  std: 2641.023375585159
+  range: 10768.224349787297
+- iter: 4.0
+  best: 1162.5168926071008
+  mean: 3943.1471042109947
+  std: 3155.5163593210077
+  range: 10655.112409350688
+- iter: 5.0
+  best: 1268.1675925463417
+  mean: 3249.790568397226
+  std: 2123.3465396830243
+  range: 9300.061008920704
+- iter: 6.0
+  best: 1131.627796999116
+  mean: 3282.7018024184
+  std: 2552.6472256087004
+  range: 10272.592847906635
+- iter: 7.0
+  best: 1111.9482195381338
+  mean: 3029.1452862692386
+  std: 1814.7997720252629
+  range: 7124.882407282432
+- iter: 8.0
+  best: 1108.3187402532856
+  mean: 3785.2151196380973
+  std: 2513.1950077944975
+  range: 7866.93388962979
+- iter: 9.0
+  best: 1150.1472544158435
+  mean: 2271.2405901748634
+  std: 1085.3862848898727
+  range: 3789.787503918209
+- iter: 10.0
+  best: 1103.785055515355
+  mean: 1714.4764236245205
+  std: 937.6199556365053
+  range: 3619.0190693164527
+- iter: 11.0
+  best: 1074.5349376069987
+  mean: 1653.6718867702943
+  std: 600.4238509332724
+  range: 1910.7406531277722
+- iter: 12.0
+  best: 1076.5558305509667
+  mean: 2228.4474046444566
+  std: 1445.4128726408298
+  range: 4768.370947373239
+- iter: 13.0
+  best: 968.6477766435585
+  mean: 1546.9717916960071
+  std: 526.8111483559934
+  range: 1836.391814072888
+- iter: 14.0
+  best: 1041.8231337880413
+  mean: 1464.1490646763748
+  std: 576.3185053514939
+  range: 2288.491705569526
+- iter: 15.0
+  best: 1017.0489944914792
+  mean: 1521.0562185881768
+  std: 582.9497937265354
+  range: 2079.4819689062188
+- iter: 16.0
+  best: 1025.210553307868
+  mean: 1407.9730678953697
+  std: 446.7153391212834
+  range: 1616.5074113616029
+- iter: 17.0
+  best: 1065.0269841393388
+  mean: 1698.8588273906703
+  std: 946.0559597650282
+  range: 2820.4687362662426
+- iter: 18.0
+  best: 1029.374289503757
+  mean: 1381.668981387888
+  std: 811.5551254380898
+  range: 3410.877488235714
+- iter: 19.0
+  best: 1013.5044728961108
+  mean: 1108.9397688550207
+  std: 114.9685638966463
+  range: 491.08853745399267
+- iter: 20.0
+  best: 1007.1836875422124
+  mean: 1398.441506640678
+  std: 524.651820991933
+  range: 1724.8303050239097
+- iter: 21.0
+  best: 997.0461301103487
+  mean: 1205.2359460179828
+  std: 337.019642496152
+  range: 1449.7053876893424
+- iter: 22.0
+  best: 1006.296462512275
+  mean: 1246.719317194622
+  std: 542.1884801975434
+  range: 2321.738017757551
+- iter: 23.0
+  best: 996.7321702892243
+  mean: 1088.4106765104289
+  std: 59.219544840586444
+  range: 256.08366025789996
+- iter: 24.0
+  best: 1001.0166895659523
+  mean: 1084.9569999826363
+  std: 81.79224371547382
+  range: 305.52209664309737
+- iter: 25.0
+  best: 1001.628637378624
+  mean: 1043.5916996488909
+  std: 34.01766709175784
+  range: 137.39082768537924
+- iter: 26.0
+  best: 999.0327257575184
+  mean: 1048.027406486381
+  std: 35.858618887978096
+  range: 130.57690745895525
+- iter: 27.0
+  best: 1003.4320635401857
+  mean: 1036.9270521326039
+  std: 38.40154689043504
+  range: 138.24671471676447
+- iter: 28.0
+  best: 997.3947152724696
+  mean: 1047.2687080869396
+  std: 52.87885923205819
+  range: 193.08279176214444
+- iter: 29.0
+  best: 1000.7686257273465
+  mean: 1016.9124049140567
+  std: 14.171980604205658
+  range: 60.538537015367865
+- iter: 30.0
+  best: 998.1818240332457
+  mean: 1012.7904429146979
+  std: 14.89536148688861
+  range: 54.536261660523905
+- iter: 31.0
+  best: 997.8733379746515
+  mean: 1017.3339569523234
+  std: 16.663247373935697
+  range: 63.36330057182397
+- iter: 32.0
+  best: 997.2459844447376
+  mean: 1020.8498975541065
+  std: 32.376451309417824
+  range: 127.29995035890124
+- iter: 33.0
+  best: 996.8475565327099
+  mean: 1013.269963019585
+  std: 15.996083688254025
+  range: 55.82373096122387
+- iter: 34.0
+  best: 997.0638609478476
+  mean: 1010.3950282200349
+  std: 15.487898730119033
+  range: 52.688480509927786
+- iter: 35.0
+  best: 997.005544055188
+  mean: 1006.9229531665721
+  std: 9.6251704526378
+  range: 30.21694276693097
+- iter: 36.0
+  best: 996.6033675679611
+  mean: 1001.7456124159455
+  std: 5.240639437805747
+  range: 21.002089094297958
+- iter: 37.0
+  best: 995.9042306679607
+  mean: 1002.8772638923122
+  std: 10.223242705513655
+  range: 43.11691669844663
+- iter: 38.0
+  best: 995.1640365053295
+  mean: 1001.3011881512518
+  std: 5.292686219896891
+  range: 19.014069161534735
+- iter: 39.0
+  best: 994.734674991112
+  mean: 998.2914695712411
+  std: 2.4053432693548578
+  range: 10.241644616665553
+- iter: 40.0
+  best: 994.3879161550252
+  mean: 997.3066441468268
+  std: 2.1213230356055197
+  range: 7.176202238567271
+- iter: 41.0
+  best: 995.3050263506136
+  mean: 998.3925396922597
+  std: 3.1224051535215533
+  range: 11.259286610918593
+- iter: 42.0
+  best: 995.2106944580471
+  mean: 997.695743072443
+  std: 2.2308542840382835
+  range: 8.37429176653518
+- iter: 43.0
+  best: 994.788544751339
+  mean: 997.0729628172312
+  std: 1.8069590552842387
+  range: 6.469168617948753
+- iter: 44.0
+  best: 994.8006964362905
+  mean: 998.0381975742764
+  std: 3.784245980358561
+  range: 16.138200595142848
+- iter: 45.0
+  best: 993.1884923800856
+  mean: 996.7145044111146
+  std: 1.9351646021292905
+  range: 6.596886827103162
+- iter: 46.0
+  best: 993.5441475200579
+  mean: 995.8482113608336
+  std: 1.454664396731323
+  range: 4.732390804603824
+- iter: 47.0
+  best: 993.2912830063605
+  mean: 995.6498561441059
+  std: 1.545804612125768
+  range: 5.372484441825918
+- iter: 48.0
+  best: 993.3697671638689
+  mean: 996.4447564529531
+  std: 2.2636409670699953
+  range: 8.352270565607682
+- iter: 49.0
+  best: 993.0957376748643
+  mean: 995.0447618453599
+  std: 2.3016190951016915
+  range: 7.142107209566916
+- iter: 50.0
+  best: 992.8092504667502
+  mean: 994.7017376237934
+  std: 1.9139897755173563
+  range: 7.91478176586179
+- iter: 51.0
+  best: 992.5219519595228
+  mean: 994.0495404172439
+  std: 0.8689430920601471
+  range: 3.3465266641641165
+stop:
+  early_stop_std: 1.0
+best_replay_plot: results/baseline_controller_v1/pool_jointwise_20260403_132618/left_knee/best_replay_12xN.png
+best_replay_target_joint_plot: results/baseline_controller_v1/pool_jointwise_20260403_132618/left_knee/best_replay_target_joint.png

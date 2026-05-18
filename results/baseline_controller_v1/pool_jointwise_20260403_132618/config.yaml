@@ -1,0 +1,2656 @@
+datasets_root: models/lerobot_humanoid/datasets/baseline_controller_v1
+dataset_layout: grouped_by_joint
+experiments:
+- experiment_2s_sinus_0.5
+- experiment_2s_sinus_0.6
+- experiment_2s_sinus_0.7
+- experiment_2s_sinus_0.8
+- experiment_2s_sinus_0.9
+- experiment_2s_sinus_1.0
+- experiment_2s_sinus_1.1
+- experiment_2s_sinus_1.2
+- experiment_2s_sinus_1.3
+- experiment_2s_sinus_1.4
+- experiment_2s_sinus_1.5
+- experiment_2s_sinus_1.6
+- experiment_2s_sinus_1.7
+- experiment_2s_sinus_1.8
+- experiment_2s_sinus_1.9
+- experiment_2s_sinus_2.0
+- experiment_2s_sinus_2.1
+- experiment_2s_sinus_2.2
+- experiment_2s_sinus_2.3
+- experiment_2s_sinus_2.4
+- experiment_2s_sinus_2.5
+- experiment_2s_sinus_2.8
+- experiment_2s_sinus_3.0
+- experiment_2s_sinus_3.2
+- experiment_2s_sinus_3.5
+- experiment_2s_step_inv
+joint_order:
+- right_ankle_roll
+- right_ankle_pitch
+- right_knee
+- right_hipy
+- right_hipx
+- right_hipz
+- left_ankle_roll
+- left_ankle_pitch
+- left_knee
+- left_hipy
+- left_hipx
+- left_hipz
+simulator:
+  mjcf_path: lerobot-humanoid-models/models/bipedal_plateform_no_arms/mjcf/scene_fixed_base.xml
+  device: cuda
+  fixed_base: true
+  sim_dt: 0.01
+  physics_substeps_per_action: 1
+  pool_multiprocessing: true
+  pool_mp_start_method: spawn
+  pool_pin_workers_to_cores: true
+  pool_prefer_physical_cores: true
+  pool_worker_num_threads: 1
+  n_model: 16
+  nworld: 26
+cmaes:
+  popsize: 16
+  maxiter: 300
+  sigma0: 0.12
+  seed: 0
+  early_stop_std: 1.0
+  respect_cma_stop: false
+  optimize_gain_scale: false
+  armature_scale_lb: 0.1
+  armature_scale_ub: 100.0
+  viscous_scale_lb: 0.1
+  viscous_scale_ub: 100.0
+  dry_scale_lb: 0.1
+  dry_scale_ub: 100.0
+  torque_limit_scale_lb: 0.5
+  torque_limit_scale_ub: 1.5
+  action_delay_steps_lb: 0.0
+  action_delay_steps_ub: 15.0
+  mass_scale_lb: 1.0
+  mass_scale_ub: 1.01
+  com_scale_lb: 1.0
+  com_scale_ub: 1.01
+  gain_scale_lb: 0.5
+  gain_scale_ub: 2.0
+  joint_order:
+  - right_ankle_roll
+  - right_ankle_pitch
+  - right_knee
+  - right_hipy
+  - right_hipx
+  - right_hipz
+  - left_ankle_roll
+  - left_ankle_pitch
+  - left_knee
+  - left_hipy
+  - left_hipx
+  - left_hipz
+  debug_candidates: false
+  debug_candidates_rows: 3
+  progress_every: 1
+param_order:
+- armature
+- viscous_friction
+- dry_friction
+- torque_limit
+- action_delay_steps
+- kp
+- kv
+- mass_scale
+- com_x_scale
+- com_y_scale
+- com_z_scale
+base_gains:
+  joint_order:
+  - left_hipz
+  - left_hipx
+  - left_hipy
+  - left_knee
+  - left_ankle_pitch
+  - left_ankle_roll
+  - right_hipz
+  - right_hipx
+  - right_hipy
+  - right_knee
+  - right_ankle_pitch
+  - right_ankle_roll
+  kp:
+  - 80.0
+  - 80.0
+  - 100.0
+  - 100.0
+  - 30.0
+  - 30.0
+  - 80.0
+  - 80.0
+  - 100.0
+  - 100.0
+  - 30.0
+  - 30.0
+  kv:
+  - 4.0
+  - 4.0
+  - 5.0
+  - 5.0
+  - 1.0
+  - 1.0
+  - 4.0
+  - 4.0
+  - 5.0
+  - 5.0
+  - 1.0
+  - 1.0
+action_excitation:
+  right_ankle_roll:
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.980267524719238
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.980267524719238
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/right_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 5.0
+    dominant_joint: right_ankle_roll
+    dominant_joint_amp_deg: 5.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  right_ankle_pitch:
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.980267524719238
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.980267524719238
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/right_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 5.0
+    dominant_joint: right_ankle_pitch
+    dominant_joint_amp_deg: 5.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  right_knee:
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/right_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/right_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/right_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/right_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/right_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/right_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.980267524719238
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.980267524719238
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/right_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/right_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/right_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/right_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/right_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/right_knee
+    episode_index: null
+    active_joint_amp_deg: 5.0
+    dominant_joint: right_knee
+    dominant_joint_amp_deg: 5.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  right_hipy:
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.980267524719238
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.980267524719238
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/right_hipy
+    episode_index: null
+    active_joint_amp_deg: 5.0
+    dominant_joint: right_hipy
+    dominant_joint_amp_deg: 5.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  right_hipx:
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.980267524719238
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.980267524719238
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/right_hipx
+    episode_index: null
+    active_joint_amp_deg: 5.0
+    dominant_joint: right_hipx
+    dominant_joint_amp_deg: 5.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  right_hipz:
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.980267524719238
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.980267524719238
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/right_hipz
+    episode_index: null
+    active_joint_amp_deg: 5.0
+    dominant_joint: right_hipz
+    dominant_joint_amp_deg: 5.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  left_ankle_roll:
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.980267524719238
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.980267524719238
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/left_ankle_roll
+    episode_index: null
+    active_joint_amp_deg: 5.0
+    dominant_joint: left_ankle_roll
+    dominant_joint_amp_deg: 5.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  left_ankle_pitch:
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.980267524719238
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.980267524719238
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/left_ankle_pitch
+    episode_index: null
+    active_joint_amp_deg: 5.0
+    dominant_joint: left_ankle_pitch
+    dominant_joint_amp_deg: 5.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  left_knee:
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/left_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/left_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/left_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/left_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/left_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/left_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.980267524719238
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.980267524719238
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/left_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/left_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/left_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/left_knee
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/left_knee
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/left_knee
+    episode_index: null
+    active_joint_amp_deg: 5.0
+    dominant_joint: left_knee
+    dominant_joint_amp_deg: 5.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  left_hipy:
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.980267524719238
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.980267524719238
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/left_hipy
+    episode_index: null
+    active_joint_amp_deg: 5.0
+    dominant_joint: left_hipy
+    dominant_joint_amp_deg: 5.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  left_hipx:
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.980267524719238
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.980267524719238
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/left_hipx
+    episode_index: null
+    active_joint_amp_deg: 5.0
+    dominant_joint: left_hipx
+    dominant_joint_amp_deg: 5.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  left_hipz:
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.980267524719238
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.980267524719238
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999802589416504
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999802589416504
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 9.999210357666016
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 9.999210357666016
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 10.0
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 10.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0
+  - dataset_root: models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/left_hipz
+    episode_index: null
+    active_joint_amp_deg: 5.0
+    dominant_joint: left_hipz
+    dominant_joint_amp_deg: 5.0
+    max_other_joint: left_hipz
+    max_other_joint_amp_deg: 0.0
+    max_other_over_active_ratio: 0.0

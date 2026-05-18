@@ -1,0 +1,245 @@
+joint: left_ankle_roll
+best_train_lsq: 4920.2130635267295
+best_scale_vector:
+  armature_scale: 0.9236299697998495
+  viscous_scale: 1.0097713178674201
+  dry_scale: 1.9568861463606848
+  torque_limit_scale: 1.2147267439021472
+  action_delay_steps: 1.0325780419767716
+  mass_scale: 1.0005760363977996
+  com_x_scale: 1.0013975212191815
+  com_y_scale: 1.0038162140747613
+  com_z_scale: 1.0003969235810934
+best_eval_vector:
+  armature: 0.02582946521219836
+  viscous_friction: 0.36194812034699847
+  dry_friction: 0.8338481753802041
+  torque_limit: 607.3633719510736
+  action_delay_steps: 1.0325780419767716
+  kp: 30.0
+  kv: 1.0
+  mass_scale: 1.0005760363977996
+  com_x_scale: 1.0013975212191815
+  com_y_scale: 1.0038162140747613
+  com_z_scale: 1.0003969235810934
+best_eval_array:
+- 0.02582946521219836
+- 0.36194812034699847
+- 0.8338481753802041
+- 607.3633719510736
+- 1.0325780419767716
+- 30.0
+- 1.0
+- 1.0005760363977996
+- 1.0013975212191815
+- 1.0038162140747613
+- 1.0003969235810934
+selected_absolute_params:
+  armature: 0.02582946521219836
+  viscous_friction: 0.36194812034699847
+  dry_friction: 0.8338481753802041
+  torque_limit: 607.3633719510736
+  action_delay_steps: 1.0
+  kp: 30.0
+  kv: 1.0
+  mass: 0.49170923917502807
+  com_x: -2.214928180403043e-07
+  com_y: -0.0195156425578699
+  com_z: -0.046337416930610116
+datasets:
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/left_ankle_roll
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/left_ankle_roll
+history:
+- iter: 0.0
+  best: 5528.86566373335
+  mean: 7272.381311933
+  std: 901.2021173285452
+  range: 3038.76097216211
+- iter: 1.0
+  best: 5220.372141206961
+  mean: 6041.897750825747
+  std: 584.9366595514509
+  range: 2061.793119465842
+- iter: 2.0
+  best: 5052.488201934461
+  mean: 5677.435134204377
+  std: 585.7808055517963
+  range: 2540.6059408041
+- iter: 3.0
+  best: 5090.127410159473
+  mean: 5667.620595611049
+  std: 698.9957074693086
+  range: 3035.7308998269345
+- iter: 4.0
+  best: 5117.890032546721
+  mean: 5618.498076608023
+  std: 368.0785283389771
+  range: 1186.348878481128
+- iter: 5.0
+  best: 4950.964086831879
+  mean: 5497.091435980206
+  std: 613.4360537140988
+  range: 2382.8576879433504
+- iter: 6.0
+  best: 4976.7114939107405
+  mean: 5547.8476365762235
+  std: 627.7726261023302
+  range: 2233.986547105367
+- iter: 7.0
+  best: 4983.324542568907
+  mean: 5270.301647339773
+  std: 246.90081019428808
+  range: 868.0423022430268
+- iter: 8.0
+  best: 4972.021280818681
+  mean: 5239.682182337921
+  std: 183.6844253903103
+  range: 621.5518515866333
+- iter: 9.0
+  best: 4933.061307172999
+  mean: 5734.995564175428
+  std: 1045.6197201311318
+  range: 3034.65990039178
+- iter: 10.0
+  best: 4949.032399630148
+  mean: 5701.173333505625
+  std: 839.1879199768655
+  range: 2663.7769081055494
+- iter: 11.0
+  best: 4931.865154725664
+  mean: 5591.985101816595
+  std: 957.7926712073223
+  range: 3408.8319270752427
+- iter: 12.0
+  best: 4939.130245824113
+  mean: 5423.595291112544
+  std: 284.1772878723065
+  range: 981.5499441297688
+- iter: 13.0
+  best: 4947.934317703818
+  mean: 5238.6927636026485
+  std: 283.1722536366926
+  range: 928.7013074943079
+- iter: 14.0
+  best: 4943.338196532508
+  mean: 5468.521531426059
+  std: 1012.1207758656744
+  range: 4354.794359040605
+- iter: 15.0
+  best: 4930.134577291032
+  mean: 5113.299112365091
+  std: 171.7700553183345
+  range: 690.1551166091185
+- iter: 16.0
+  best: 4934.88578336474
+  mean: 5061.736583937385
+  std: 125.73636259654046
+  range: 453.87199779002185
+- iter: 17.0
+  best: 4928.124008228409
+  mean: 5041.784223350212
+  std: 86.49193728253351
+  range: 307.4047555667685
+- iter: 18.0
+  best: 4928.090517083295
+  mean: 5015.064198106531
+  std: 93.84788166215304
+  range: 364.59345879478406
+- iter: 19.0
+  best: 4929.101985868565
+  mean: 4986.580212261713
+  std: 59.643202207659044
+  range: 254.64953916772356
+- iter: 20.0
+  best: 4923.216605756243
+  mean: 4962.950129497967
+  std: 18.63903881059845
+  range: 71.70882356347192
+- iter: 21.0
+  best: 4925.41376398572
+  mean: 4965.5062782779805
+  std: 28.4356485562877
+  range: 95.66775926938499
+- iter: 22.0
+  best: 4921.254425194898
+  mean: 4945.075469079658
+  std: 17.55086401353538
+  range: 63.56662251938724
+- iter: 23.0
+  best: 4922.345208203513
+  mean: 4942.268398478016
+  std: 19.44671150665655
+  range: 77.29678664770654
+- iter: 24.0
+  best: 4920.266502856813
+  mean: 4933.818930764914
+  std: 11.87257418419005
+  range: 37.11213959019642
+- iter: 25.0
+  best: 4921.319802770299
+  mean: 4929.810305252089
+  std: 8.443024337778004
+  range: 28.71125493693944
+- iter: 26.0
+  best: 4921.444303894991
+  mean: 4926.803713182639
+  std: 5.311239672224202
+  range: 21.019220166626837
+- iter: 27.0
+  best: 4920.437232142328
+  mean: 4925.062017466285
+  std: 2.8547525662224804
+  range: 8.994513828435629
+- iter: 28.0
+  best: 4921.12962518445
+  mean: 4924.419761602783
+  std: 3.1114186752081845
+  range: 12.142670663869467
+- iter: 29.0
+  best: 4920.312500599787
+  mean: 4922.06601512395
+  std: 1.2835630248927739
+  range: 4.378042974105483
+- iter: 30.0
+  best: 4920.799634312915
+  mean: 4922.720872590402
+  std: 1.3566905633815836
+  range: 4.774397712413702
+- iter: 31.0
+  best: 4920.3473334873
+  mean: 4922.12586360923
+  std: 1.1693913938853993
+  range: 4.305143192000287
+- iter: 32.0
+  best: 4920.2130635267295
+  mean: 4921.516262461695
+  std: 0.9686304276254303
+  range: 3.6156092148703465
+stop:
+  early_stop_std: 1.0
+best_replay_plot: results/baseline_controller_v1/pool_jointwise_20260403_132618/left_ankle_roll/best_replay_12xN.png
+best_replay_target_joint_plot: results/baseline_controller_v1/pool_jointwise_20260403_132618/left_ankle_roll/best_replay_target_joint.png

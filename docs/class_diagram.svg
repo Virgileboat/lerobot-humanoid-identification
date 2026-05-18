@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1250" viewBox="0 0 1900 1250" role="img" aria-labelledby="title desc">
+  <title id="title">identification_2 class diagram</title>
+  <desc id="desc">UML style class diagram for the core replay and identification pipeline.</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .classbox { fill: #ffffff; stroke: #1f2937; stroke-width: 2; }
+      .sep { stroke: #1f2937; stroke-width: 1.6; }
+      .title { font-family: Arial, sans-serif; font-size: 30px; font-weight: 700; fill: #111827; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 16px; fill: #374151; }
+      .classname { font-family: Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #111827; }
+      .member { font-family: "Courier New", monospace; font-size: 14px; fill: #111827; }
+      .rel { stroke: #374151; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #374151; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,4 L0,8 z" fill="#374151" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1900" height="1250" />
+  <text class="title" x="36" y="52">identification_2 - Core Class Diagram</text>
+  <text class="subtitle" x="36" y="78">Replay, parameter application, and CMA-ES optimization interactions.</text>
+
+  <!-- run_cmaes_pool_all_joints -->
+  <rect class="classbox" x="40" y="110" width="470" height="165" />
+  <line class="sep" x1="40" y1="156" x2="510" y2="156" />
+  <text class="classname" x="275" y="140" text-anchor="middle">run_cmaes_pool_all_joints</text>
+  <text class="member" x="56" y="182">+ main()</text>
+  <text class="member" x="56" y="204">+ _validate_joint_action_excitation()</text>
+  <text class="member" x="56" y="226">+ _save_joint_artifacts(...)</text>
+
+  <!-- JointwiseExperimentData -->
+  <rect class="classbox" x="40" y="320" width="470" height="210" />
+  <line class="sep" x1="40" y1="366" x2="510" y2="366" />
+  <text class="classname" x="275" y="350" text-anchor="middle">JointwiseExperimentData</text>
+  <text class="member" x="56" y="392">+ experiment_names: list[str]</text>
+  <text class="member" x="56" y="414">+ dataset_layout: str</text>
+  <text class="member" x="56" y="436">+ datasets_by_joint: dict[str, list[JointMotionDataset]]</text>
+  <text class="member" x="56" y="458">+ base_kp: np.ndarray</text>
+  <text class="member" x="56" y="480">+ base_kv: np.ndarray</text>
+
+  <!-- JointMotionDataset -->
+  <rect class="classbox" x="40" y="570" width="470" height="170" />
+  <line class="sep" x1="40" y1="616" x2="510" y2="616" />
+  <text class="classname" x="275" y="600" text-anchor="middle">JointMotionDataset</text>
+  <text class="member" x="56" y="642">+ actions_deg: np.ndarray</text>
+  <text class="member" x="56" y="664">+ observed_pos_deg: np.ndarray</text>
+  <text class="member" x="56" y="686">+ timestamps_s: np.ndarray</text>
+
+  <!-- ParallelJointwiseCMAES -->
+  <rect class="classbox" x="580" y="110" width="470" height="165" />
+  <line class="sep" x1="580" y1="156" x2="1050" y2="156" />
+  <text class="classname" x="815" y="140" text-anchor="middle">ParallelJointwiseCMAES</text>
+  <text class="member" x="596" y="182">+ run() JointwiseCMAESResult</text>
+  <text class="member" x="596" y="204">+ _run_one_joint(...) dict</text>
+
+  <!-- JointwiseCMAESConfig -->
+  <rect class="classbox" x="1090" y="110" width="350" height="185" />
+  <line class="sep" x1="1090" y1="156" x2="1440" y2="156" />
+  <text class="classname" x="1265" y="140" text-anchor="middle">JointwiseCMAESConfig</text>
+  <text class="member" x="1106" y="182">+ popsize: int</text>
+  <text class="member" x="1106" y="204">+ maxiter: int</text>
+  <text class="member" x="1106" y="226">+ sigma0: float</text>
+  <text class="member" x="1106" y="248">+ joint_order: tuple[str]</text>
+
+  <!-- MJWarpPopulationJointCost -->
+  <rect class="classbox" x="580" y="320" width="470" height="290" />
+  <line class="sep" x1="580" y1="366" x2="1050" y2="366" />
+  <text class="classname" x="815" y="350" text-anchor="middle">MJWarpPopulationJointCost</text>
+  <text class="member" x="596" y="392">+ cost_for_joint(joint, candidate_params) np.ndarray</text>
+  <text class="member" x="596" y="414">+ apply_candidate_batch_for_joint(...) np.ndarray</text>
+  <text class="member" x="596" y="436">+ replay_joint_datasets(joint) dict</text>
+  <text class="member" x="596" y="458">+ _apply_joint_parameters(active_joint, candidate_mat)</text>
+  <text class="member" x="596" y="480">+ _lsq_per_model_for_joint(...) np.ndarray</text>
+
+  <!-- HumanoidMJWarpModelPool -->
+  <rect class="classbox" x="1090" y="340" width="770" height="560" />
+  <line class="sep" x1="1090" y1="386" x2="1860" y2="386" />
+  <text class="classname" x="1475" y="370" text-anchor="middle">HumanoidMJWarpModelPool</text>
+  <text class="member" x="1106" y="412">+ connect()</text>
+  <text class="member" x="1106" y="434">+ prepare_replay_datasets(datasets, cache_key) str</text>
+  <text class="member" x="1106" y="456">+ replay_datasets_actions(...) dict</text>
+  <text class="member" x="1106" y="488">+ set_joint_armature_per_model(...)</text>
+  <text class="member" x="1106" y="510">+ set_joint_viscous_friction_per_model(...)</text>
+  <text class="member" x="1106" y="532">+ set_joint_static_friction_per_model(...)</text>
+  <text class="member" x="1106" y="554">+ set_joint_torque_limit_per_model(...)</text>
+  <text class="member" x="1106" y="576">+ set_joint_action_delay_steps_per_model(...)</text>
+  <text class="member" x="1106" y="598">+ set_joint_gains_per_model(...)</text>
+  <text class="member" x="1106" y="620">+ set_body_mass_per_model(...)</text>
+  <text class="member" x="1106" y="642">+ set_body_com_per_model(...)</text>
+
+  <!-- HumanoidMJWarp -->
+  <rect class="classbox" x="1090" y="940" width="500" height="190" />
+  <line class="sep" x1="1090" y1="986" x2="1590" y2="986" />
+  <text class="classname" x="1340" y="970" text-anchor="middle">HumanoidMJWarp</text>
+  <text class="member" x="1106" y="1012">+ connect()</text>
+  <text class="member" x="1106" y="1034">+ reset()</text>
+  <text class="member" x="1106" y="1056">+ send_action_tensor(action_deg)</text>
+  <text class="member" x="1106" y="1078">+ get_observation_tensor() dict</text>
+
+  <!-- mjcf_paths -->
+  <rect class="classbox" x="1630" y="940" width="230" height="190" />
+  <line class="sep" x1="1630" y1="986" x2="1860" y2="986" />
+  <text class="classname" x="1745" y="970" text-anchor="middle">mjcf_paths</text>
+  <text class="member" x="1646" y="1012">+ get_model_mjcf_dir()</text>
+  <text class="member" x="1646" y="1034">+ get_default_mjcf_path(...)</text>
+  <text class="member" x="1646" y="1056">+ ensure_fixed_base_scene(...)</text>
+
+  <!-- Relationships -->
+  <path class="rel" d="M510 192 L580 192" />
+  <text class="label" x="525" y="182">run optimizer</text>
+
+  <path class="rel" d="M350 275 L350 320" />
+  <text class="label" x="360" y="304">load data</text>
+
+  <path class="rel" d="M350 530 L350 570" />
+  <text class="label" x="360" y="558">contains</text>
+
+  <path class="rel" d="M510 226 L580 370" />
+  <text class="label" x="520" y="295">build evaluator</text>
+
+  <path class="rel" d="M1050 192 L1090 192" />
+  <text class="label" x="1032" y="182">uses</text>
+
+  <path class="rel" d="M815 275 L815 320" />
+  <text class="label" x="826" y="304">evaluate population</text>
+
+  <path class="rel" d="M1050 470 L1090 470" />
+  <text class="label" x="952" y="460">apply params + replay</text>
+
+  <path class="rel" d="M1340 900 L1340 940" />
+  <text class="label" x="1352" y="924">owns N models</text>
+
+  <path class="rel" d="M1590 1035 L1630 1035" />
+  <text class="label" x="1538" y="1024">scene path</text>
+</svg>

@@ -1,0 +1,285 @@
+joint: right_hipx
+best_train_lsq: 239.11133917913932
+best_scale_vector:
+  armature_scale: 0.4562784574284083
+  viscous_scale: 0.7425084440275518
+  dry_scale: 0.7441465099330835
+  torque_limit_scale: 1.2016339275977492
+  action_delay_steps: 0.7569802425325063
+  mass_scale: 1.0029802735382318
+  com_x_scale: 1.0018171246870144
+  com_y_scale: 1.000838868188136
+  com_z_scale: 1.0017580516757592
+best_eval_vector:
+  armature: 0.08672458552429543
+  viscous_friction: 1.3414346909678903
+  dry_friction: 0.5646888207087699
+  torque_limit: 1057.4378562860193
+  action_delay_steps: 0.7569802425325063
+  kp: 80.0
+  kv: 4.0
+  mass_scale: 1.0029802735382318
+  com_x_scale: 1.0018171246870144
+  com_y_scale: 1.000838868188136
+  com_z_scale: 1.0017580516757592
+best_eval_array:
+- 0.08672458552429543
+- 1.3414346909678903
+- 0.5646888207087699
+- 1057.4378562860193
+- 0.7569802425325063
+- 80.0
+- 4.0
+- 1.0029802735382318
+- 1.0018171246870144
+- 1.000838868188136
+- 1.0017580516757592
+selected_absolute_params:
+  armature: 0.08672458552429543
+  viscous_friction: 1.3414346909678903
+  dry_friction: 0.5646888207087699
+  torque_limit: 1057.4378562860193
+  action_delay_steps: 1.0
+  kp: 80.0
+  kv: 4.0
+  mass: 0.7782092642260114
+  com_x: 0.003620607474823667
+  com_y: -0.0018632644694031564
+  com_z: -0.06567845006539687
+datasets:
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/right_hipx
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/right_hipx
+history:
+- iter: 0.0
+  best: 4421.90570681784
+  mean: 6876.253338395473
+  std: 2089.550191576114
+  range: 7737.238132623851
+- iter: 1.0
+  best: 2493.394744036744
+  mean: 5254.242153948542
+  std: 1916.1952989617462
+  range: 8264.180418205078
+- iter: 2.0
+  best: 1108.8265086995925
+  mean: 3083.5411958508466
+  std: 1114.1591210542608
+  range: 4191.09993128172
+- iter: 3.0
+  best: 592.431655776978
+  mean: 2278.230780754335
+  std: 1308.6591479261738
+  range: 5543.834880159299
+- iter: 4.0
+  best: 482.44732319107584
+  mean: 1749.9869935713384
+  std: 1120.0659577640138
+  range: 4814.347345832158
+- iter: 5.0
+  best: 354.79177023710866
+  mean: 1444.621293886013
+  std: 1481.7890993283256
+  range: 5359.617252415714
+- iter: 6.0
+  best: 257.1999366011702
+  mean: 1275.7620133027017
+  std: 877.0518823644912
+  range: 2567.9089849791994
+- iter: 7.0
+  best: 405.191728620948
+  mean: 1224.7546591196278
+  std: 851.7637280002505
+  range: 3052.0880267789153
+- iter: 8.0
+  best: 260.50542523764534
+  mean: 708.6234364728607
+  std: 528.11057834668
+  range: 1751.6303756739676
+- iter: 9.0
+  best: 380.52058144085566
+  mean: 704.9629518439983
+  std: 408.81862085932903
+  range: 1410.0207879780653
+- iter: 10.0
+  best: 292.53691680591595
+  mean: 565.301225669323
+  std: 268.65474594136987
+  range: 864.0402203727863
+- iter: 11.0
+  best: 249.50251565937097
+  mean: 668.834227391404
+  std: 377.33024008470113
+  range: 1214.2144337633408
+- iter: 12.0
+  best: 244.75305116975142
+  mean: 351.07332484565376
+  std: 129.7424070408833
+  range: 459.0359942110937
+- iter: 13.0
+  best: 247.038273104024
+  mean: 622.450343964987
+  std: 799.0579562584418
+  range: 3407.6617670742266
+- iter: 14.0
+  best: 243.9852758629626
+  mean: 387.212096026204
+  std: 151.4997720769079
+  range: 543.659052926619
+- iter: 15.0
+  best: 239.1942613852739
+  mean: 314.25749861847237
+  std: 68.22949321815841
+  range: 255.557328024131
+- iter: 16.0
+  best: 248.7513866400109
+  mean: 315.06665829495995
+  std: 64.11232727223158
+  range: 216.77895891021407
+- iter: 17.0
+  best: 246.443749826744
+  mean: 317.7667515078591
+  std: 68.9830393677299
+  range: 263.9932187331084
+- iter: 18.0
+  best: 265.1779250594281
+  mean: 366.4868931778145
+  std: 71.78597227507876
+  range: 245.8700678493297
+- iter: 19.0
+  best: 256.23707698957054
+  mean: 710.6128389826354
+  std: 1077.2771116668098
+  range: 4126.634835441225
+- iter: 20.0
+  best: 260.8921734218833
+  mean: 317.4952186008177
+  std: 46.42829302664594
+  range: 149.56754553828335
+- iter: 21.0
+  best: 243.03366831950686
+  mean: 299.34628633664573
+  std: 46.79403442635577
+  range: 166.38352200740454
+- iter: 22.0
+  best: 245.02195840688276
+  mean: 291.88808436098833
+  std: 38.9294997396363
+  range: 131.25141506727735
+- iter: 23.0
+  best: 239.93784206682173
+  mean: 254.56551198440877
+  std: 11.595730358725966
+  range: 47.87563410412358
+- iter: 24.0
+  best: 239.64529442219566
+  mean: 257.0044209271707
+  std: 16.294442948157464
+  range: 55.37773482525358
+- iter: 25.0
+  best: 242.2780781647685
+  mean: 273.0933755903187
+  std: 23.626940984342014
+  range: 83.99672454964389
+- iter: 26.0
+  best: 242.35574275412984
+  mean: 255.49107941644837
+  std: 14.59754991899478
+  range: 54.78821660552251
+- iter: 27.0
+  best: 241.51615336727846
+  mean: 263.81019205689125
+  std: 27.69590459799692
+  range: 98.44969991333741
+- iter: 28.0
+  best: 240.10524848771536
+  mean: 251.74536535642005
+  std: 10.805018039465095
+  range: 36.37804083078032
+- iter: 29.0
+  best: 240.7065158523958
+  mean: 249.73696249168384
+  std: 7.907925704678104
+  range: 27.9409518426329
+- iter: 30.0
+  best: 239.90325102340526
+  mean: 249.39626879219378
+  std: 7.21463298021471
+  range: 26.384402681978116
+- iter: 31.0
+  best: 239.5049158680601
+  mean: 244.5902917149436
+  std: 4.954369340718936
+  range: 21.671867580437265
+- iter: 32.0
+  best: 239.42980350598145
+  mean: 244.83084791004882
+  std: 4.497608540648952
+  range: 17.59416341498445
+- iter: 33.0
+  best: 239.25641063719357
+  mean: 241.97149558874196
+  std: 1.9774324298566466
+  range: 6.280360538068919
+- iter: 34.0
+  best: 239.4850172057688
+  mean: 241.58522165208137
+  std: 1.3731079290022223
+  range: 4.49024928903313
+- iter: 35.0
+  best: 239.19715346705922
+  mean: 242.80942714166096
+  std: 3.9481262744287475
+  range: 14.255220026124277
+- iter: 36.0
+  best: 239.1918260138563
+  mean: 241.40093128389003
+  std: 2.16622339212858
+  range: 8.96711531193526
+- iter: 37.0
+  best: 239.11133917913932
+  mean: 242.54979991733634
+  std: 3.550244314342439
+  range: 14.012314278139598
+- iter: 38.0
+  best: 239.38208636208108
+  mean: 240.9783327168272
+  std: 1.4786828038508406
+  range: 5.6858910702117385
+- iter: 39.0
+  best: 239.2643865413125
+  mean: 241.20990939559366
+  std: 1.3519736485524725
+  range: 4.881985231461925
+- iter: 40.0
+  best: 239.12603364502814
+  mean: 240.2415219163536
+  std: 0.9318254402205721
+  range: 2.9611458741203194
+stop:
+  early_stop_std: 1.0
+best_replay_plot: results/baseline_controller_v1/pool_jointwise_20260403_132618/right_hipx/best_replay_12xN.png
+best_replay_target_joint_plot: results/baseline_controller_v1/pool_jointwise_20260403_132618/right_hipx/best_replay_target_joint.png

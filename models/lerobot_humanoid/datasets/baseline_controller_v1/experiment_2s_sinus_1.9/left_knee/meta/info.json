@@ -1,0 +1,124 @@
+{
+    "codebase_version": "v3.0",
+    "robot_type": "lerobot_humanoid",
+    "total_episodes": 1,
+    "total_frames": 200,
+    "total_tasks": 1,
+    "chunks_size": 1000,
+    "data_files_size_in_mb": 100,
+    "video_files_size_in_mb": 200,
+    "fps": 100,
+    "splits": {
+        "train": "0:1"
+    },
+    "data_path": "data/chunk-{chunk_index:03d}/file-{file_index:03d}.parquet",
+    "video_path": null,
+    "features": {
+        "action": {
+            "dtype": "float32",
+            "names": [
+                "left_hipz.pos",
+                "left_hipx.pos",
+                "left_hipy.pos",
+                "left_knee.pos",
+                "left_ankle_pitch.pos",
+                "left_ankle_roll.pos",
+                "right_hipz.pos",
+                "right_hipx.pos",
+                "right_hipy.pos",
+                "right_knee.pos",
+                "right_ankle_pitch.pos",
+                "right_ankle_roll.pos"
+            ],
+            "shape": [
+                12
+            ]
+        },
+        "observation.state": {
+            "dtype": "float32",
+            "names": [
+                "left_hipz.pos",
+                "left_hipz.vel",
+                "left_hipz.torque",
+                "left_hipx.pos",
+                "left_hipx.vel",
+                "left_hipx.torque",
+                "left_hipy.pos",
+                "left_hipy.vel",
+                "left_hipy.torque",
+                "left_knee.pos",
+                "left_knee.vel",
+                "left_knee.torque",
+                "left_ankle_pitch.pos",
+                "left_ankle_pitch.vel",
+                "left_ankle_pitch.torque",
+                "left_ankle_roll.pos",
+                "left_ankle_roll.vel",
+                "left_ankle_roll.torque",
+                "right_hipz.pos",
+                "right_hipz.vel",
+                "right_hipz.torque",
+                "right_hipx.pos",
+                "right_hipx.vel",
+                "right_hipx.torque",
+                "right_hipy.pos",
+                "right_hipy.vel",
+                "right_hipy.torque",
+                "right_knee.pos",
+                "right_knee.vel",
+                "right_knee.torque",
+                "right_ankle_pitch.pos",
+                "right_ankle_pitch.vel",
+                "right_ankle_pitch.torque",
+                "right_ankle_roll.pos",
+                "right_ankle_roll.vel",
+                "right_ankle_roll.torque",
+                "base.orientation.x",
+                "base.orientation.y",
+                "base.orientation.z",
+                "base.orientation.w",
+                "base.ang_vel.x",
+                "base.ang_vel.y",
+                "base.ang_vel.z"
+            ],
+            "shape": [
+                43
+            ]
+        },
+        "timestamp": {
+            "dtype": "float32",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "frame_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "episode_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "task_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        }
+    }
+}

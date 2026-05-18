@@ -1,0 +1,28 @@
+timestamp: '20260401_154249'
+frames: 200
+joint_order:
+- left_hipz
+- left_hipx
+- left_hipy
+- left_knee
+- left_ankle_pitch
+- left_ankle_roll
+- right_hipz
+- right_hipx
+- right_hipy
+- right_knee
+- right_ankle_pitch
+- right_ankle_roll
+joints:
+  left_hipz: identification_2/models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_hipz
+  left_hipx: identification_2/models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_hipx
+  left_hipy: identification_2/models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_hipy
+  left_knee: identification_2/models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_knee
+  left_ankle_pitch: identification_2/models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_ankle_pitch
+  left_ankle_roll: identification_2/models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_ankle_roll
+  right_hipz: identification_2/models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/right_hipz
+  right_hipx: identification_2/models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/right_hipx
+  right_hipy: identification_2/models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/right_hipy
+  right_knee: identification_2/models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/right_knee
+  right_ankle_pitch: identification_2/models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/right_ankle_pitch
+  right_ankle_roll: identification_2/models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/right_ankle_roll

@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local scratch helper (not part of source)
+ipython_helper.py
+
+# Generated fixed-base scene cache
+.cache/
+
+# Keep only the release dataset bundle tracked by default.
+models/lerobot_humanoid/datasets/*
+!models/lerobot_humanoid/datasets/baseline_controller_v1/
+!models/lerobot_humanoid/datasets/baseline_controller_v1/**
+
+# Keep results untracked by default, except reference release output.
+results/*
+!results/baseline_controller_v1/
+results/baseline_controller_v1/*
+!results/baseline_controller_v1/pool_jointwise_20260403_132618/
+!results/baseline_controller_v1/pool_jointwise_20260403_132618/**
+
+# Keep structured reference artifacts tracked; drop heavy plots.
+results/baseline_controller_v1/pool_jointwise_20260403_132618/**/*.png

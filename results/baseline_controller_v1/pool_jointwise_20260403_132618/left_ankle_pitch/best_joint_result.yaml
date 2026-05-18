@@ -1,0 +1,235 @@
+joint: left_ankle_pitch
+best_train_lsq: 575.4311106539267
+best_scale_vector:
+  armature_scale: 1.1271187424341695
+  viscous_scale: 1.268522627057427
+  dry_scale: 1.4492019163704453
+  torque_limit_scale: 1.0113529519594024
+  action_delay_steps: 1.2540474689642382
+  mass_scale: 1.0006705545895531
+  com_x_scale: 1.0002271380854524
+  com_y_scale: 1.0057468083252508
+  com_z_scale: 1.0004205172961982
+best_eval_vector:
+  armature: 0.03793682923522368
+  viscous_friction: 0.4374553065010626
+  dry_friction: 0.39399679482847005
+  torque_limit: 505.6764759797012
+  action_delay_steps: 1.2540474689642382
+  kp: 30.0
+  kv: 1.0
+  mass_scale: 1.0006705545895531
+  com_x_scale: 1.0002271380854524
+  com_y_scale: 1.0057468083252508
+  com_z_scale: 1.0004205172961982
+best_eval_array:
+- 0.03793682923522368
+- 0.4374553065010626
+- 0.39399679482847005
+- 505.6764759797012
+- 1.2540474689642382
+- 30.0
+- 1.0
+- 1.0006705545895531
+- 1.0002271380854524
+- 1.0057468083252508
+- 1.0004205172961982
+selected_absolute_params:
+  armature: 0.03793682923522368
+  viscous_friction: 0.4374553065010626
+  dry_friction: 0.39399679482847005
+  torque_limit: 505.6764759797012
+  action_delay_steps: 1.0
+  kp: 30.0
+  kv: 1.0
+  mass: 0.019526246493468898
+  com_x: -2.945321778445492e-08
+  com_y: 0.000495097180605968
+  com_z: 0.020008410986619325
+datasets:
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.5/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.6/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.7/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.8/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_0.9/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.0/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.1/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.2/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.3/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.4/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.5/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.6/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.7/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.8/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_1.9/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.0/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.1/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.2/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.3/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.4/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.5/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_2.8/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.0/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.2/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_sinus_3.5/left_ankle_pitch
+- models/lerobot_humanoid/datasets/baseline_controller_v1/experiment_2s_step_inv/left_ankle_pitch
+history:
+- iter: 0.0
+  best: 927.0546975573867
+  mean: 1953.5407329815932
+  std: 532.5830781594842
+  range: 2155.603836321717
+- iter: 1.0
+  best: 688.1632985370561
+  mean: 1348.5853674529576
+  std: 408.6900006809442
+  range: 1280.0065729573407
+- iter: 2.0
+  best: 615.8605465628627
+  mean: 1301.7836974725133
+  std: 700.5552024897332
+  range: 2491.1304007944937
+- iter: 3.0
+  best: 587.7873570265683
+  mean: 846.9581353947767
+  std: 202.00750402586795
+  range: 650.1367762510715
+- iter: 4.0
+  best: 612.5099986095273
+  mean: 1121.7481958300855
+  std: 446.98881439544175
+  range: 1720.0704633529117
+- iter: 5.0
+  best: 606.4721890512812
+  mean: 1741.3609762065153
+  std: 1985.3627794019046
+  range: 7784.845855638647
+- iter: 6.0
+  best: 663.8617438742998
+  mean: 1983.7126967648087
+  std: 1608.0416302288263
+  range: 4345.844655496934
+- iter: 7.0
+  best: 624.5519133840447
+  mean: 1076.6617067823408
+  std: 759.363024738023
+  range: 3273.5697207276417
+- iter: 8.0
+  best: 581.1889447684064
+  mean: 1413.2374783389982
+  std: 1435.8944546171062
+  range: 4287.222285086556
+- iter: 9.0
+  best: 588.3094338059994
+  mean: 1021.8189065455807
+  std: 643.1188799639027
+  range: 2664.3573514552336
+- iter: 10.0
+  best: 577.1081034899738
+  mean: 1020.6880087669058
+  std: 953.3657475885846
+  range: 3863.756059910202
+- iter: 11.0
+  best: 578.2871647168772
+  mean: 763.6469491778131
+  std: 217.73786161373962
+  range: 953.9756525868652
+- iter: 12.0
+  best: 576.6888989738123
+  mean: 689.3766722635405
+  std: 117.95428081373527
+  range: 440.510368497077
+- iter: 13.0
+  best: 584.9474992081724
+  mean: 647.4300595601421
+  std: 45.32734198327121
+  range: 163.4231343782975
+- iter: 14.0
+  best: 581.0361850124019
+  mean: 636.6733168015719
+  std: 56.566832219352634
+  range: 187.87653904990475
+- iter: 15.0
+  best: 584.1861580835838
+  mean: 635.0317330367338
+  std: 51.72558339071104
+  range: 203.49715809223312
+- iter: 16.0
+  best: 583.4991271647289
+  mean: 607.3288848262507
+  std: 20.43948672013302
+  range: 83.01992531831092
+- iter: 17.0
+  best: 576.9147988799301
+  mean: 622.2669411527938
+  std: 39.47512974930303
+  range: 139.35980820273403
+- iter: 18.0
+  best: 576.570844179783
+  mean: 597.2306018625432
+  std: 24.54575645973685
+  range: 102.97735188383785
+- iter: 19.0
+  best: 579.3169384570565
+  mean: 595.143198385197
+  std: 14.397281780864237
+  range: 55.87187304766417
+- iter: 20.0
+  best: 577.1840954129301
+  mean: 588.2628422290936
+  std: 11.377661114671252
+  range: 37.167889654073065
+- iter: 21.0
+  best: 577.2539378463671
+  mean: 587.8587713943151
+  std: 8.521710216523653
+  range: 27.546246494315028
+- iter: 22.0
+  best: 576.303753058192
+  mean: 582.3284703600839
+  std: 5.483692124832689
+  range: 22.547019458376667
+- iter: 23.0
+  best: 575.8665992196545
+  mean: 580.8797828860056
+  std: 5.752293850608589
+  range: 21.471063484658202
+- iter: 24.0
+  best: 575.4311106539267
+  mean: 579.9768022957801
+  std: 3.225705357210923
+  range: 12.704688628431768
+- iter: 25.0
+  best: 575.6122325206206
+  mean: 578.5764121221467
+  std: 3.46065112635579
+  range: 13.597702226645424
+- iter: 26.0
+  best: 575.7973323879478
+  mean: 577.3681161041529
+  std: 1.6676082570140838
+  range: 6.845633518566615
+- iter: 27.0
+  best: 575.5511306147472
+  mean: 576.8796383909344
+  std: 1.1079093210699749
+  range: 3.7603606552502242
+- iter: 28.0
+  best: 575.4455159187169
+  mean: 577.2013156004762
+  std: 1.506319868771234
+  range: 4.893399425486223
+- iter: 29.0
+  best: 575.6483366756321
+  mean: 576.7977799416543
+  std: 1.0909162744326946
+  range: 3.9425774190393668
+- iter: 30.0
+  best: 575.5898634707075
+  mean: 576.5169275428175
+  std: 0.855701394245905
+  range: 2.873478701412978
+stop:
+  early_stop_std: 1.0
+best_replay_plot: results/baseline_controller_v1/pool_jointwise_20260403_132618/left_ankle_pitch/best_replay_12xN.png
+best_replay_target_joint_plot: results/baseline_controller_v1/pool_jointwise_20260403_132618/left_ankle_pitch/best_replay_target_joint.png

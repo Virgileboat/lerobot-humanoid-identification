@@ -1,0 +1,20 @@
+[project]
+name = "lerobot-identification"
+version = "0.1.0"
+description = "Standalone identification tooling for LeRobot humanoid MJWarp replay and CMA-ES."
+requires-python = ">=3.10,<3.11"
+dependencies = [
+  "cma>=4.3.0",
+  "matplotlib>=3.8.0",
+  "mujoco>=3.2.0",
+  "mujoco-warp>=0.1.0",
+  "numpy>=1.26.0",
+  "pandas>=2.2.0",
+  "pyarrow>=17.0.0",
+  "pyyaml>=6.0.0",
+  "torch>=2.4.0",
+  "warp-lang>=1.5.0",
+]
+
+[tool.uv]
+package = false
