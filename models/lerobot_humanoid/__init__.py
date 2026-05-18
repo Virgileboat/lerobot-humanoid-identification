@@ -9,7 +9,7 @@ from .robot_constants import (
     load_position_gains_from_baseline,
     load_position_gains_from_model_spec,
 )
-from identification_2.simulator.mjcf_paths import (
+from simulator.mjcf_paths import (
     MODEL_NAME as EXTERNAL_MODEL_NAME,
     ensure_fixed_base_scene,
     get_default_mjcf_path,

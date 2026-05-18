@@ -6,7 +6,7 @@ from typing import Any, Callable, Mapping, Sequence
 
 import numpy as np
 
-from identification_2.cmaes.pool_joint_cost import MJWarpPopulationJointCost
+from cmaes.pool_joint_cost import MJWarpPopulationJointCost
 
 BASE_SCALE_ORDER = (
     "armature_scale",

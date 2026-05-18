@@ -11,15 +11,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import yaml
 
-from identification_2.cmaes import (
+from cmaes import (
     CANONICAL_PARAM_ORDER,
     JointwiseCMAESConfig,
     MJWarpPopulationJointCost,
     ParallelJointwiseCMAES,
     load_jointwise_experiment_data,
 )
-from identification_2.models.lerobot_humanoid import ROBOT_NAME
-from identification_2.simulator import JOINT_ORDER, HumanoidMJWarpConfig, HumanoidMJWarpModelPool
+from models.lerobot_humanoid import ROBOT_NAME
+from simulator import JOINT_ORDER, HumanoidMJWarpConfig, HumanoidMJWarpModelPool
 
 DEFAULT_OPTIMIZATION_JOINT_ORDER = (
     "right_ankle_roll",

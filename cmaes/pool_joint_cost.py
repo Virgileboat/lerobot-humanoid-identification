@@ -7,11 +7,11 @@ from typing import Mapping, Sequence
 
 import numpy as np
 
-from identification_2.cmaes.dataset_loader import (
+from cmaes.dataset_loader import (
     JointMotionDataset,
 )
-from identification_2.simulator.config import JOINT_ORDER
-from identification_2.simulator.runtime import HumanoidMJWarpModelPool
+from simulator.config import JOINT_ORDER
+from simulator.runtime import HumanoidMJWarpModelPool
 
 CANONICAL_PARAM_ORDER = (
     "armature",

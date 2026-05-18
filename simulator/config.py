@@ -3,8 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from identification_2.simulator.robot_spec import JOINT_ORDER as HUMANOID_JOINT_ORDER
-from identification_2.simulator.mjcf_paths import get_default_mjcf_path
+from simulator.robot_spec import JOINT_ORDER as HUMANOID_JOINT_ORDER
+from simulator.mjcf_paths import get_default_mjcf_path
 
 JOINT_ORDER = tuple(str(j) for j in HUMANOID_JOINT_ORDER)
 

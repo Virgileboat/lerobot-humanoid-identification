@@ -10,8 +10,8 @@ Keep this module to avoid breaking existing imports.
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-from identification_2.simulator.mjcf_paths import get_default_mjcf_path
-from identification_2.simulator.robot_spec import (
+from simulator.mjcf_paths import get_default_mjcf_path
+from simulator.robot_spec import (
     JOINT_ORDER,
     POSITION_KD_BY_MOTOR_ID,
     POSITION_KD_BY_MOTOR_ID_BASELINE,

@@ -5,7 +5,7 @@ from typing import Any, Mapping, Sequence
 
 import numpy as np
 
-from identification_2.simulator import JOINT_ORDER, HumanoidMJWarpConfig, HumanoidMJWarpModelPool
+from simulator import JOINT_ORDER, HumanoidMJWarpConfig, HumanoidMJWarpModelPool
 
 
 def _validate_joint(joint: str) -> str:

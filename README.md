@@ -70,7 +70,7 @@ The loader also supports `per_experiment` layout:
 ## Typical Run
 
 ```bash
-uv run python -m identification_2.cmaes.run_cmaes_pool_all_joints \
+uv run python -m cmaes.run_cmaes_pool_all_joints \
   --datasets-root models/lerobot_humanoid/datasets/baseline_controller_v1 \
   --dataset-layout auto \
   --fixed-base \
@@ -94,7 +94,7 @@ uv run python -m identification_2.cmaes.run_cmaes_pool_all_joints \
 ## CPU Smoke Run
 
 ```bash
-uv run python -m identification_2.cmaes.run_cmaes_pool_all_joints \
+uv run python -m cmaes.run_cmaes_pool_all_joints \
   --datasets-root models/lerobot_humanoid/datasets/baseline_controller_v1 \
   --experiments experiment_2s_step_inv experiment_2s_sinus_0.5 \
   --dataset-layout auto \
@@ -108,7 +108,7 @@ uv run python -m identification_2.cmaes.run_cmaes_pool_all_joints \
 The command line interface is defined in `cmaes/run_cmaes_pool_all_joints.py` (`--help` shows all options):
 
 ```bash
-uv run python -m identification_2.cmaes.run_cmaes_pool_all_joints --help
+uv run python -m cmaes.run_cmaes_pool_all_joints --help
 ```
 
 ## Outputs

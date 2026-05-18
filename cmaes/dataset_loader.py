@@ -7,7 +7,7 @@ from typing import Any, Sequence
 
 import numpy as np
 
-from identification_2.simulator.config import JOINT_ORDER
+from simulator.config import JOINT_ORDER
 
 
 @dataclass(frozen=True)

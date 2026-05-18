@@ -12,7 +12,7 @@ from typing import Any, Iterable
 
 import numpy as np
 
-from identification_2.simulator.config import JOINT_ORDER as CONFIG_JOINT_ORDER, HumanoidMJWarpConfig
+from simulator.config import JOINT_ORDER as CONFIG_JOINT_ORDER, HumanoidMJWarpConfig
 
 JOINT_ORDER = list(CONFIG_JOINT_ORDER)
 JOINT_INDEX = {j: i for i, j in enumerate(JOINT_ORDER)}
@@ -137,7 +137,7 @@ def _resolve_mjcf_path(mjcf_path: Path, fixed_base: bool) -> Path:
 
     # Fallback for external model dependency that only provides scene.xml + robot.xml.
     try:
-        from identification_2.simulator.mjcf_paths import ensure_fixed_base_scene
+        from simulator.mjcf_paths import ensure_fixed_base_scene
 
         if base.exists():
             p_gen = ensure_fixed_base_scene(base)

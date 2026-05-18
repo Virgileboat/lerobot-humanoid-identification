@@ -26,7 +26,7 @@ Rule: any change here must preserve compatibility with 1/2/3.
 
 - Keep the core loop stable:
   - dataset load -> replay pool -> CMA-ES -> per-joint outputs
-- Keep release commands root-runnable (`uv run python -m identification_2...`).
+- Keep release commands root-runnable (`uv run python -m cmaes...`).
 - Keep fixed-base behavior deterministic for release runs.
 - Keep minimal, clean release artifacts (no random debug leftovers).
 - Keep compatibility with existing dataset layout and `JOINT_ORDER`.
@@ -72,7 +72,7 @@ Any bug here invalidates final identified parameters.
 ## Required Smoke Test Before Merge/Release
 
 ```bash
-uv run python -m identification_2.cmaes.run_cmaes_pool_all_joints \
+uv run python -m cmaes.run_cmaes_pool_all_joints \
   --datasets-root models/lerobot_humanoid/datasets/baseline_controller_v1 \
   --experiments experiment_2s_step_inv \
   --dataset-layout auto \
