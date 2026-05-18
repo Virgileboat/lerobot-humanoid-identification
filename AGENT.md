@@ -1,96 +1,60 @@
-# AGENT.md - Working Contract (Virgile style)
+# AGENT.md
 
-## Identity and Scope
+## Remote Reference
 
-This repo is the identification engine for LeRobot Humanoid:
-
-- replay many datasets/configurations in parallel
-- optimize simulator parameters with joint-wise CMA-ES
-
-Out of scope here: real robot acquisition/control stacks.  
-Those live in other repos, but this repo must stay compatible with what they produce.
+- Remote repository: <https://github.com/Virgileboat/lerobot-humanoid-identification>
+- Default branch: <https://github.com/Virgileboat/lerobot-humanoid-identification/tree/main>
+- Current tracked upstream branch: `origin/main`
 
 ## Full Project Context
 
-This repo is one block in the LeRobot humanoid stack:
+This repository is the identification block in the LeRobot humanoid stack:
 
-1. **Model geometry & MJCF**: `lerobot-humanoid-models` (submodule, version pinned)
-2. **Robot runtime/control repos**: e.g. `lerobot_humanoid_runtime`, `lerobot_humanoide_hardware`, `lerobot_can`
-3. **Policy/training repos**: e.g. `lerobot`, `lerobot_huamnoide_training`
-4. **This repo**: offline replay + sim-ID + reference outputs for regression
-5. **Downstream loop**: tuned sim params fed back to runtime/training experiments
+1. `lerobot-humanoid-design`: co-design assumptions and feasibility
+2. `lerobot-humanoid-hardware`: real build and commissioning procedures
+3. `lerobot-humanoid-model`: shared MJCF/URDF assets
+4. `lerobot-humanoid-runtime`: real/sim control and data acquisition
+5. `lerobot-humanoid-identification`: offline replay + parameter identification (this repo)
 
-Rule: any change here must preserve compatibility with 1/2/3.
+Identification outputs are used to tune simulator realism for runtime and training loops.
 
-## Non-Negotiables
+## Mission Of This Repo
 
-- Keep the core loop stable:
-  - dataset load -> replay pool -> CMA-ES -> per-joint outputs
-- Keep release commands root-runnable (`uv run python -m cmaes...`).
-- Keep fixed-base behavior deterministic for release runs.
-- Keep minimal, clean release artifacts (no random debug leftovers).
-- Keep compatibility with existing dataset layout and `JOINT_ORDER`.
-- Never silently break command lines used in README and release notes.
+Run joint-wise simulator identification with MJWarp + CMA-ES:
 
-## Critical Path
+- load recorded datasets
+- replay trajectories in batched simulation
+- optimize model/dynamics parameters per joint
+- export reproducible run artifacts
 
-1. `cmaes/run_cmaes_pool_all_joints.py:main()`
-2. `cmaes/parallel_jointwise_cmaes.py:_run_one_joint()`
-3. `cmaes/pool_joint_cost.py:cost_for_joint()`
-4. `cmaes/pool_joint_cost.py:_apply_joint_parameters()`  <- most critical write path
-5. `simulator/runtime.py:HumanoidMJWarpModelPool.replay_datasets_actions()`
-6. LSQ aggregation back to CMA-ES
+## Core Pipeline (Do Not Break)
 
-Any bug here invalidates final identified parameters.
+1. `cmaes/run_cmaes_pool_all_joints.py`
+2. `cmaes/parallel_jointwise_cmaes.py`
+3. `cmaes/pool_joint_cost.py`
+4. `simulator/runtime.py`
+5. result export to `results/.../pool_jointwise_<timestamp>/`
 
-## Fixed-Base Contract
+## Critical Contracts
 
-- User asks `--fixed-base`.
-- Runtime resolves to a fixed-base scene (`*_fixed_base.xml`), even if config stores `scene.xml`.
-- Do not assume saved config `mjcf_path` equals runtime-loaded file path.
+- CLI stays root-runnable (`uv run python -m cmaes...`).
+- Dataset layout compatibility remains (`grouped_by_joint`, `per_experiment`, `auto`).
+- Fixed-base resolution behavior stays coherent with `simulator/mjcf_paths.py`.
+- Parameter write APIs in `simulator/runtime.py` remain synchronized with cost code.
+- `JOINT_ORDER` assumptions stay explicit and backward-compatible.
 
-## Parameter Write APIs (must stay coherent)
+## Dependencies And Interfaces
 
-- `set_joint_armature_per_model`
-- `set_joint_viscous_friction_per_model`
-- `set_joint_static_friction_per_model`
-- `set_joint_torque_limit_per_model`
-- `set_joint_action_delay_steps_per_model`
-- `set_joint_gains_per_model`
-- `set_body_mass_per_model`
-- `set_body_com_per_model`
+- Model dependency is the in-repo submodule path `lerobot-humanoid-models/`.
+- Upstream data often comes from runtime acquisition workflows.
+- Downstream consumers include runtime/training experiments using identified params.
 
-## Release Baseline Assets
+## Validation Before Merge
 
-- Dataset bundle kept in repo:
-  - `models/lerobot_humanoid/datasets/baseline_controller_v1`
-- Reference result kept in repo:
-  - `results/baseline_controller_v1/pool_jointwise_20260403_132618`
-- Model dependency:
-  - `lerobot-humanoid-models` submodule
+Run at least one smoke identification command and verify:
 
-## Required Smoke Test Before Merge/Release
-
-```bash
-uv run python -m cmaes.run_cmaes_pool_all_joints \
-  --datasets-root models/lerobot_humanoid/datasets/baseline_controller_v1 \
-  --experiments experiment_2s_step_inv \
-  --dataset-layout auto \
-  --fixed-base \
-  --device cpu \
-  --joint-order right_knee \
-  --popsize 2 --maxiter 1 --sigma0 0.3 \
-  --out-dir results/smoke_cpu_release
-```
-
-Expected:
-
-- command completes
+- process completes
 - `summary.yaml` exists
-- warnings may exist (`nefc overflow`), but no crash
+- per-joint result files are generated
 
-## Engineering Style for This Repo
-
-- Keep changes focused and reviewable.
-- Prefer explicit paths and explicit contracts over hidden behavior.
-- If uncertain, run smoke test and report exact files/outputs.
+Preferred smoke shape: CPU, small `popsize`, `maxiter=1`, single joint.
